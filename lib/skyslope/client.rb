@@ -15,11 +15,48 @@ module Skyslope
       @access_secret = access_secret
     end
 
+    def connection
+      @faraday ||= Faraday.new connection_options do |req|
+        req.adapter :net_http
+        req.response :logger, nil, { headers: true, bodies: true }
+      end
+    end
+
+    def resources
+      @resources ||= {}
+    end
+
     def authentication
       AuthenticationResource.new(connection: authentication_connection )
     end
 
+    def self.resources
+      {
+        users: UserResource,
+        offices: OfficeResource
+      }
+    end
+
+    def method_missing(name, *args, &block)
+      if self.class.resources.keys.include?(name)
+        resources[name] ||= self.class.resources[name].new(connection: connection)
+        resources[name]
+      else
+        super
+      end
+    end
+
     private
+
+    def connection_options
+      {
+        url: Skyslope.configuration.api_url,
+        headers: {
+          content_type: 'application/json',
+          session:       @session_key
+        }
+      }
+    end
 
     def authentication_connection
       @faraday_authentication ||= Faraday.new authentication_connection_options do |req|
