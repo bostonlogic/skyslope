@@ -46,11 +46,11 @@ module Skyslope
     attribute :co_broker_company
     attribute :title_contact, TitleContact
     attribute :escrow_contact, EscrowContact
-    attribute :attorney_contact, AttorneyContact
+    attribute :attorney_contact, Array(AttorneyContact)
     attribute :lender_contact, LenderContact
     attribute :other_side_agent_contact, OtherSideAgentContact
-    attribute :commission_breakdowns, CommissionBreakdown
-    attribute :commission_splits, CommissionSplit
+    attribute :commission_breakdowns, Array(CommissionBreakdown)
+    attribute :commission_splits, Array(CommissionSplit)
     attribute :commission_referral, CommissionReferral
     attribute :agent
     attribute :earnest_money_deposit, EarnestMoneyDeposit

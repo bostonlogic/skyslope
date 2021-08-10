@@ -29,10 +29,10 @@ module Skyslope
         property :homeWarranty_contact, key: 'homeWarrantyContact', include: HomeWarrantyContactMapping
         property :miscellaneous_contact, key: 'miscContact', include: MiscellaneousContactMapping
         property :stage, include: StageMapping
-        property :co_agent_guids, key: 'coAgentGuids' #
-        property :agent, key: 'agent' #
-        property :co_agents, key: 'coAgents' #
-        property :custom_fields, key: 'customFields' #
+        property :co_agent_guids, plural: true, key: 'coAgentGuids'
+        property :agent, plural: true, key: 'agent'
+        property :co_agents, plural: true, key: 'coAgents'
+        property :custom_fields, key: 'customFields'
         property :created_on, key: 'createdOn'
         property :co_listing_agent_guid, key: 'coListingAgentGuid'
         property :referring_agent_guid, key: 'referringAgentGuid'
