@@ -60,7 +60,6 @@ module Skyslope
         property :commission_breakdowns, plural: true, key: 'commissionBreakdowns', include: CommissionBreakdownMapping
         property :commission_splits, plural: true, key: 'commissionSplits', include: CommissionSplitMapping
         property :commission_referral, key: 'commissionReferral', include: CommissionReferralMapping
-        property :agent
         property :earnest_money_deposit, key: 'earnestMoneyDeposit', include: EarnestMoneyDepositMapping
         # summary specific
         property :number_of_sales, key: 'numberOfSales'
