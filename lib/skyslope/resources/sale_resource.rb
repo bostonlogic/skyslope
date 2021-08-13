@@ -8,13 +8,19 @@ module Skyslope
         verb :get
         query_keys :agentGuid, :createdByGuid, :earliestDate, :latestDate, :pageNumber
         path 'api/files/sales'
-        handler(200) { |response| SaleMapping.extract_collection(transactions_payload, :read) }
+        handler(200) do |response|
+          sales_payload = JSON.load(response.body)['value']
+          SaleMapping.extract_collection(sales_payload.to_json, :all)
+        end
       end
 
       action :find do
         verb :get
         path 'api/files/sales/:sale_guid'
-        handler(200) { |response| SaleMapping.extract_single(response.body, :read) }
+        handler(200) do |response|
+          sale_payload = JSON.load(response.body)['value']
+          SaleMapping.extract_single(sale_payload.to_json, :read)
+        end
       end
 
       action :update do

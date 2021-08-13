@@ -6,7 +6,7 @@ module Skyslope
     attribute :actual_closing_date
     attribute :property_address
     attribute :link, Link
-
+    attribute :modified_on
     attribute :agent_guid
     attribute :attorney_contact, Array(AttorneyContact)
     attribute :sellers, Array(Seller)
@@ -14,7 +14,7 @@ module Skyslope
     attribute :checklist_type
     attribute :co_agent_guids
     attribute :co_broker_company
-    attribute :commercialLease, CommercialLease
+    attribute :commercial_lease, CommercialLease
     attribute :commission, Commission
     attribute :commission_breakdowns, Array(CommissionBreakdown)
     attribute :commission_referral, CommissionReferral
@@ -27,7 +27,7 @@ module Skyslope
     attribute :earnest_money_deposit, EarnestMoneyDeposit
     attribute :escrow_contact, EscrowContact
     attribute :escrow_number
-    attribute :homeWarranty_contact, HomeWarrantyContact
+    attribute :home_warranty_contact, HomeWarrantyContact
     attribute :is_office_lead
     attribute :lender_contact, LenderContact
     attribute :listing_guid
@@ -35,6 +35,7 @@ module Skyslope
     attribute :miscellaneous_contact, MiscellaneousContact
     attribute :mls_number
     attribute :office_guid
+    attribute :office_id
     attribute :other_side_agent_contact, OtherSideAgentContact
     attribute :other_source
     attribute :property, Property
@@ -45,4 +46,9 @@ module Skyslope
     attribute :status
     attribute :status_id
     attribute :title_contact, TitleContact
+    attribute :email
+    attribute :agent
+    attribute :co_agents
+    attribute :contract_acceptance_date
   end
+end

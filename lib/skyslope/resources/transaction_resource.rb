@@ -18,18 +18,14 @@ module Skyslope
         verb :get
         query_keys :agentGuid, :createdByGuid, :earliestDate, :latestDate, :pageNumber
         path 'api/files/listings'
-        handler(200) { |response|
-          TransactionMapping.extract_collection(response.body, :read)
-        }
+        handler(200) { |response| TransactionMapping.extract_collection(response.body, :read) }
       end
 
       action :sales do
         verb :get
         query_keys :agentGuid, :createdByGuid, :earliestDate, :latestDate, :pageNumber
         path 'api/files/sales'
-        handler(200) { |response|
-          TransactionMapping.extract_collection(response.body, :read)
-        }
+        handler(200) { |response| TransactionMapping.extract_collection(response.body, :read) }
       end
 
     end

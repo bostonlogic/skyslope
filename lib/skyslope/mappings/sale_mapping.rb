@@ -5,13 +5,15 @@ module Skyslope
     kartograph do
       mapping Sale
 
+      root_key singular: 'sale', plural: 'sales', scopes: [:read, :all]
+
       scoped :all do
         property :sale_guid, key: 'saleGuid'
         property :status
         property :actual_closing_date, key: 'actualClosingDate'
         property :escrow_closing_date, key: 'escrowClosingDate'
         property :property_address, key: 'propertyAddress'
-        property :link, include LinkMapping
+        property :link, include: LinkMapping
       end
 
       scoped :read do
@@ -87,6 +89,16 @@ module Skyslope
         property :actual_closing_date, key: 'actualClosingDate'
         property :apn
         property :commercial_lease, key: 'commercialLease', include: CommercialLeaseMapping
+        property :contract_acceptance_date, key: 'contractAcceptanceDate'
+        property :escrow_closing_date, key: 'escrowClosingDate'
+        property :escrow_number, key: 'escrowNumber'
+        property :file_id, key: 'fileId'
+        property :is_office_lead, key: 'isOfficeLead'
+        property :listing_price, key: 'listingPrice'
+        property :mls_number, key: 'mlsNumber'
+        property :other_source, key: 'otherSource'
+        property :sale_price, key: 'salePrice'
+        property :source_id, key: 'sourceId'
       end
 
     end
