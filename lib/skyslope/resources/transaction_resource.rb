@@ -32,27 +32,6 @@ module Skyslope
         }
       end
 
-      # action :create_listing do
-      # end
-
-      # action :create_sale do
-      # end
-
-      # action :find_listing do
-      # end
-
-      # action :find_sale do
-      # end
-
-      # action :update_listing do
-      # end
-
-      # action :update_sale do
-      # end
-
-      # action :destroy do
-      # end
-
     end
 
   end
