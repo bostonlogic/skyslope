@@ -52,7 +52,6 @@ module Skyslope
     attribute :commission_breakdowns, Array(CommissionBreakdown)
     attribute :commission_splits, Array(CommissionSplit)
     attribute :commission_referral, CommissionReferral
-    attribute :agent
     attribute :earnest_money_deposit, EarnestMoneyDeposit
     attribute :number_of_sales
     attribute :number_of_listings

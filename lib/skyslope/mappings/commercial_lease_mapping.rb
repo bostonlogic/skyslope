@@ -5,8 +5,19 @@ module Skyslope
     kartograph do
       mapping CommercialLease
 
-      property :size
-      property :size_type, key: 'sizeType'
+      scoped :read do
+        property :size
+        property :size_type, key: 'sizeType'
+      end
+
+      scoped :create, :update do
+        property :commencement_date, key: 'commencementDate'
+        property :ending_date, key: 'endingDate'
+        property :purchase_option, key: 'purchaseOption'
+        property :renewal_option, key: 'renewalOption'
+        property :size
+        property :size_type, key: 'sizeType'
+      end
 
     end
   end

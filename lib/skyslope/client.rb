@@ -32,9 +32,10 @@ module Skyslope
 
     def self.resources
       {
+        offices: OfficeResource,
+        sales: SaleResource,
         transactions: TransactionResource,
-        users: UserResource,
-        offices: OfficeResource
+        users: UserResource
       }
     end
 
