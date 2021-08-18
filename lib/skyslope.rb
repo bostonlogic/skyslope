@@ -12,6 +12,7 @@ module Skyslope
   autoload :AttorneyContact, 'skyslope/models/contact'
   autoload :Authentication, 'skyslope/models/authentication'
   autoload :Buyer, 'skyslope/models/contact'
+  autoload :ChecklistType, 'skyslope/models/checklist_type'
   autoload :CommercialLease, 'skyslope/models/commercial_lease'
   autoload :Commission, 'skyslope/models/commission'
   autoload :CommissionBreakdown, 'skyslope/models/commission_breakdown'
@@ -35,6 +36,7 @@ module Skyslope
   autoload :User, 'skyslope/models/user'
 
   autoload :AuthenticationResource, 'skyslope/resources/authentication_resource'
+  autoload :ChecklistTypeResource, 'skyslope/resources/checklist_type_resource'
   autoload :OfficeResource, 'skyslope/resources/office_resource'
   autoload :SaleResource, 'skyslope/resources/sale_resource'
   autoload :TransactionResource, 'skyslope/resources/transaction_resource'
@@ -45,6 +47,7 @@ module Skyslope
   autoload :AttorneyContactMapping, 'skyslope/mappings/attorney_contact_mapping'
   autoload :AuthenticationMapping, 'skyslope/mappings/authentication_mapping'
   autoload :BuyerMapping, 'skyslope/mappings/buyer_mapping'
+  autoload :ChecklistTypeMapping, 'skyslope/mappings/checklist_type_mapping'
   autoload :CommercialLeaseMapping, 'skyslope/mappings/commercial_lease_mapping'
   autoload :CommissionMapping, 'skyslope/mappings/commission_mapping'
   autoload :CommissionBreakdownMapping, 'skyslope/mappings/commission_breakdown_mapping'

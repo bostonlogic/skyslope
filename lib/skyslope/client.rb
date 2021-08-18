@@ -32,6 +32,7 @@ module Skyslope
 
     def self.resources
       {
+        checklist_types: ChecklistTypeResource,
         offices: OfficeResource,
         sales: SaleResource,
         transactions: TransactionResource,
