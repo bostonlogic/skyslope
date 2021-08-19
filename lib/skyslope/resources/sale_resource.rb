@@ -34,7 +34,7 @@ module Skyslope
         verb :post
         path 'api/files/sales'
         body { |object| SaleMapping.representation_for(:create, object) }
-        handler(200) { |response| SaleMapping.extract_single(response.body, :read) }
+        handler(200) { |response| SaleMapping.extract_single(response.body, :created) }
       end
 
       # action :sale_form do
