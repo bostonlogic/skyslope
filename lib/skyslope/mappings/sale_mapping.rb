@@ -7,6 +7,8 @@ module Skyslope
 
       root_key singular: 'sale', plural: 'sales', scopes: [:read, :all]
 
+      root_key singular: 'value', plural: '', scopes: [:created]
+
       scoped :all do
         property :sale_guid, key: 'saleGuid'
         property :status
@@ -83,6 +85,10 @@ module Skyslope
         property :file_id, key: 'fileId'
         property :other_source, key: 'otherSource'
         property :source_id, key: 'sourceId'
+      end
+
+      scoped :created do
+        property :sale_guid, key: 'saleGuid'
       end
 
       scoped :update do

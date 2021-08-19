@@ -12,6 +12,7 @@ module Skyslope
     attribute :sellers, Array(Seller)
     attribute :buyers, Array(Buyer)
     attribute :checklist_type
+    attribute :checklist_type_id
     attribute :co_agent_guids
     attribute :co_broker_company
     attribute :commercial_lease, CommercialLease
@@ -42,6 +43,7 @@ module Skyslope
     attribute :sale_guid
     attribute :sale_price
     attribute :source
+    attribute :source_id
     attribute :stage, Stage
     attribute :status
     attribute :status_id
@@ -50,5 +52,7 @@ module Skyslope
     attribute :agent
     attribute :co_agents
     attribute :contract_acceptance_date
+    attribute :apn
+    attribute :file_id
   end
 end
