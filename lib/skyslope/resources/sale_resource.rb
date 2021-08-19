@@ -37,18 +37,20 @@ module Skyslope
         handler(200) { |response| SaleMapping.extract_single(response.body, :created) }
       end
 
-      # action :sale_form do
-      #   verb :get
-      #   query_keys :checklistTypeId, :officeGuid
-      #   path 'api/files/saleForm'
-      #   handler(200) { |response| SaleFormMapping.extract_single(response.body, :read) }
-      # end
+      action :add_buyer_contact do
+        verb :post
+        path 'api/files/sales/:sale_guid/buyerContact'
+        binding.pry
+        body { |object| BuyerMapping.representation_for(:create, object) }
+        handler(200) { |response| BuyerMapping.extract_single(response.body, :created) }
+      end
 
-      # action :update_form do
-      #   verb :get
-      #   path 'api/files/sales/:sale_guid/updateSaleForm'
-      #   handler(200) { |response| SaleFormMapping.extract_single(response.body, :read) }
-      # end
+      action :add_seller_contact do
+        verb :post
+        path 'api/files/sales/:sale_guid/sellerContact'
+        body { |object| SellerMapping.representation_for(:create, object) }
+        handler(200) { |response| SellerMapping.extract_single(response.body, :created) }
+      end
 
     end
 

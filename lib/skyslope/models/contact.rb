@@ -18,10 +18,14 @@ module Skyslope
 
   class Seller < Contact
     attribute :is_trust_company_or_other_entity
+    attribute :contact_guid
+    attribute :sale_guid
   end
 
   class Buyer < Contact
     attribute :is_trust_company_or_other_entity
+    attribute :contact_guid
+    attribute :sale_guid
   end
 
   class MiscellaneousContact < Contact
