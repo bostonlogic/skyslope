@@ -74,5 +74,6 @@ module Skyslope
   class UnauthorizedError < Skyslope::Error; end
   class NotFoundError < Skyslope::Error; end
   class UnprocessableEntityError < Skyslope::Error; end
+  class RequestOverLimitError < Skyslope::Error; end
 
 end

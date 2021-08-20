@@ -12,6 +12,8 @@ module ErrorHandlingResourcable
           raise Skyslope::NotFoundError.new("#{response.status}: #{response.body}")
         elsif response.status == 422
           raise Skyslope::UnprocessableEntityError.new("#{response.status}: #{response.body}")
+        elsif response.status == 429
+          raise Skyslope::RequestOverLimitError.new("#{response.status}: #{response.body}")
         else
           raise Skyslope::Error.new("#{response.status}: #{response.body}")
         end
