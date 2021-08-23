@@ -40,7 +40,6 @@ module Skyslope
       action :add_buyer_contact do
         verb :post
         path 'api/files/sales/:sale_guid/buyerContact'
-        binding.pry
         body { |object| BuyerMapping.representation_for(:create, object) }
         handler(200) { |response| BuyerMapping.extract_single(response.body, :created) }
       end
