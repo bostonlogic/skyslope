@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    skyslope (0.0.7)
+    skyslope (0.0.8)
       faraday (>= 0.15.0)
       kartograph (~> 0.2.3)
       resource_kit (~> 0.1.5)

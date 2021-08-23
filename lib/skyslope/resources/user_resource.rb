@@ -7,6 +7,7 @@ module Skyslope
       # GET /api/users
       action :all do
         verb :get
+        query_keys :includeDeactivated, :officeGuid
         path 'api/users'
         handler(200) do |response|
           users_payload = JSON.load(response.body)['value']
