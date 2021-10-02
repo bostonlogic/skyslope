@@ -43,6 +43,7 @@ module Skyslope
   autoload :UserResource, 'skyslope/resources/user_resource'
 
   autoload :ErrorHandlingResourcable, 'skyslope/error_handling_resourcable'
+  autoload :PaginatedResource, 'skyslope/paginated_resource'
 
   autoload :AttorneyContactMapping, 'skyslope/mappings/attorney_contact_mapping'
   autoload :AuthenticationMapping, 'skyslope/mappings/authentication_mapping'
