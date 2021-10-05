@@ -18,7 +18,6 @@ module Skyslope
     def connection
       @faraday ||= Faraday.new connection_options do |req|
         req.adapter :net_http
-        req.response :logger, nil, { headers: true, bodies: true }
       end
     end
 
@@ -64,7 +63,6 @@ module Skyslope
     def authentication_connection
       @faraday_authentication ||= Faraday.new authentication_connection_options do |req|
         req.adapter :net_http
-        req.response :logger, nil, { headers: true, bodies: true }
       end
     end
 
